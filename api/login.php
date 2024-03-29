@@ -61,8 +61,9 @@ $token = array(
 
 $token = base64_encode(json_encode($token));
 
-setcookie($cookie_name, $token, $expire);
+setcookie($cookie_name, $token, $expiry_date);
 
+$response_data["success"] = true;
 $response_data["message"] = "Successful login";
 
 echo json_encode($response_data);

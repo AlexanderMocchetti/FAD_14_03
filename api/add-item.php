@@ -66,5 +66,6 @@ try {
 	error_message_die($response_data, 500);
 }
 
+$response_data["success"] = true;
 $response_data["message"] = "Item successfully added";
 echo json_encode($response_data);

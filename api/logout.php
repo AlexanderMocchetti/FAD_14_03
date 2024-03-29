@@ -2,6 +2,8 @@
 
 require_once "functions.php";
 
+header("Content-Type: application/json");
+
 $response_data = array(
     "success" => false
 );
@@ -12,5 +14,7 @@ if (!is_logged_in()) {
 }
 
 setcookie("api_token", "", 0);
+
+$response_data["success"] = true;
 $response_data["message"] = "Successful logout";
 echo json_encode($response_data);

@@ -41,6 +41,7 @@ require_once "connection.php";
 $sql = "DELETE FROM usersitems WHERE id_user = $id_user AND id_item = $id_item";
 $conn->query($sql);
 
+$response_data["success"] = true;
 $response_data['message'] = 'Successful removal';
 
 echo json_encode($response_data);

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__."/functions.php";
+require_once "functions.php";
 
 header("Content-Type: application/json");
 
@@ -25,7 +25,7 @@ if ($request_data === null || !isset($request_data['email'], $request_data['pass
 	error_message_die($response_data);
 }
 
-require_once __DIR__."/connection.php";
+require_once "connection.php";
 
 $name = $request_data['name'];
 $lastname = $request_data['lastname'];
@@ -45,6 +45,7 @@ try {
 	    error_message_die($response_data);
     }
     $sql = "INSERT INTO users (name, lastname, email, password_hash) VALUES ('$name', '$lastname', '$email', '$password')";
+    $conn->query($sql);
     $sql = "UNLOCK TABLES";
     $conn->query($sql);
     $conn->commit();
