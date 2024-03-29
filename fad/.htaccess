@@ -1,6 +1,0 @@
-SetEnv API_TOKEN_SECRET coglione
-
-RewriteEngine on
-
-RewriteCond %{REQUEST_URI} ^/api/items/.+$
-RewriteRule ^/api/items/([a-zA-Z]+)/?$ /api/$1-item.php [L]
